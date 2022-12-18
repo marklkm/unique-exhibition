@@ -45,7 +45,7 @@ p {
     font-size: 1.6em;
     font-weight: 300;
     line-height: 1.7em;
-    color: !inherit;
+    color: #000;
 }
 
 ul.workshops > li {
