@@ -19,8 +19,8 @@ img {
 
 
 img.frame {
-  -o-border-image: url("picture-frame.png") 93 92 87 92 stretch stretch;
-     border-image: url("picture-frame.png") 93 92 87 92 stretch stretch;
+  -o-border-image: url("images/picture-frame.png") 93 92 87 92 stretch stretch;
+     border-image: url("images/picture-frame.png") 93 92 87 92 stretch stretch;
   border-color: #f4be52;
   border-style: inset;
   border-width: 60px;
