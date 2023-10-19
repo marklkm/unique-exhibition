@@ -256,13 +256,16 @@
             href="https://trinityabilitycoop.com/"
             target="_blank"
             rel="noopener noreferrer"
-            >Trinity Ability co_op,</a> the 
+            >Trinity Ability co_op,</a
+          >
+          the
           <a
-          href="https://thedouglashyde.ie/"
-          target="_blank"
-          rel="noopener noreferrer"
-          > Douglas Hyde Gallery,
-          </a>and the
+            href="https://thedouglashyde.ie/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Douglas Hyde Gallery, </a
+          >and the
           <a
             href="https://www.tcdsu.ie/"
             target="_blank"
@@ -360,6 +363,11 @@
 
         <h2>STUDENT UNION REP</h2>
         <p>Rosie Joyce</p>
+
+        <h2 class="purpletext">PRACTICE YOUR ART ON THE CANVAS</h2>
+        <p>Here's an interactive art canvas where you can draw!</p>
+
+        <canvas id="drawingCanvas" width="800" height="500"></canvas>
 
         <div class="line"></div>
 
@@ -1656,6 +1664,36 @@
           $("a[aria-expanded=true]").attr("aria-expanded", "false");
         });
       });
+
+      const canvas = document.getElementById("drawingCanvas");
+      const ctx = canvas.getContext("2d");
+
+      let isDrawing = false;
+
+      canvas.addEventListener("mousedown", (e) => {
+        isDrawing = true;
+        draw(e);
+      });
+
+      canvas.addEventListener("mousemove", draw);
+
+      canvas.addEventListener("mouseup", () => {
+        isDrawing = false;
+        ctx.beginPath(); // Reset the path
+      });
+
+      function draw(e) {
+        if (!isDrawing) return;
+
+        ctx.lineWidth = 5; // Set the line width
+        ctx.lineCap = "round"; // Round the end of the line
+        ctx.strokeStyle = "black"; // Set the color
+
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+      }
     </script>
   </body>
 </html>
