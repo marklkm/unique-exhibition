@@ -5,8 +5,9 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fffff;
+    background: #ffffff;
     color: #000000;
+    /*background: url("http://www.miragearts.com/images/blog/morris/wildtulipwallpaper.jpg");*/
 }
 
 h1, h2, h3 {
@@ -25,7 +26,7 @@ img.frame {
   border-style: inset;
   border-width: 60px;
   display: block;
-  width: 50%;
+  width: 70%;
   height: auto;
   background-color: #ffe;
   margin: 0 auto;
@@ -283,3 +284,13 @@ a.article:hover {
         display: none;
     }
 }
+
+
+/* ---------------------------------------------------
+    CANVAS CSS
+----------------------------------------------------- */
+
+canvas {
+    border: 2px solid black;
+    cursor: crosshair;
+  }
