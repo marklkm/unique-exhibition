@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />-->
     <!-- favicon -->
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
@@ -15,6 +16,8 @@
     <!-- Bootstrap CSS CDN -->
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>-->
+
+    <script src="script.js"></script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
@@ -27,33 +30,19 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
-    <script
+    <!--<script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
-    ></script>
+    ></script>-->
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
     <!-- Scrollbar Custom CSS -->
-    <link
+    <!--<link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"
-    />
-
-    <!-- Font Awesome JS -->
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
-      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      defer
-      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
-      crossorigin="anonymous"
-    ></script>
+    />-->
   </head>
 
   <body>
@@ -364,10 +353,10 @@
         <h2>STUDENT UNION REP</h2>
         <p>Rosie Joyce</p>
 
-        <!--<h2 class="purpletext">PRACTICE YOUR ART ON THE CANVAS</h2>
-        <p>Here's an interactive art canvas where you can draw!</p>
+        <h2 class="purpletext">PRACTICE YOUR ART ON THE CANVAS</h2>
+        <p>Here's an interactive art canvas where you can draw!<br /></p>
 
-        <canvas id="drawingCanvas" width="800" height="500"></canvas>-->
+        <a href="draw.html"><h2>START DRAWING</h2></a>
 
         <div class="line"></div>
 
@@ -1630,17 +1619,22 @@
     </div>
 
     <!-- jQuery CDN - Slim version (=without AJAX) -->
+
+    <script src="script.js"></script>
+
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
     ></script>
+
     <!-- Popper.JS -->
-    <script
+    <!--<script
       src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
       integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
       crossorigin="anonymous"
-    ></script>
+    ></script>-->
+
     <!-- Bootstrap JS -->
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
@@ -1648,7 +1642,6 @@
       crossorigin="anonymous"
     ></script>
     <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
     <!-- Bootstrap JS - Dec 2022 -->
 
@@ -1664,36 +1657,22 @@
           $("a[aria-expanded=true]").attr("aria-expanded", "false");
         });
       });
-
-      const canvas = document.getElementById("drawingCanvas");
-      const ctx = canvas.getContext("2d");
-
-      let isDrawing = false;
-
-      canvas.addEventListener("mousedown", (e) => {
-        isDrawing = true;
-        draw(e);
-      });
-
-      canvas.addEventListener("mousemove", draw);
-
-      canvas.addEventListener("mouseup", () => {
-        isDrawing = false;
-        ctx.beginPath(); // Reset the path
-      });
-
-      function draw(e) {
-        if (!isDrawing) return;
-
-        ctx.lineWidth = 5; // Set the line width
-        ctx.lineCap = "round"; // Round the end of the line
-        ctx.strokeStyle = "black"; // Set the color
-
-        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-      }
     </script>
+
+    <!-- Font Awesome JS -->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+      integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+      integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
   </body>
 </html>
